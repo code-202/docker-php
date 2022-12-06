@@ -29,4 +29,4 @@ RUN chmod u+x /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
 
-CMD ["tail", "-f", "/srv/README"]
+CMD ["tail", "-f", "/entrypoint.sh"]
