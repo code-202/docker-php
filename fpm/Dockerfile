@@ -1,4 +1,4 @@
-FROM code-202/php:8.1
+FROM code202/php:8.1
 
 MAINTAINER jn.germon@code202.fr
 
