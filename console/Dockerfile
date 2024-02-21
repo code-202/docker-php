@@ -1,4 +1,4 @@
-FROM code202/php:8.1
+FROM code202/php:8.2
 
 MAINTAINER jn.germon@code202.fr
 
@@ -12,8 +12,8 @@ RUN apk update && \
         zsh \
     && rm -rf /var/cache/apk/*
 
-# Use PHP81
-RUN rm /usr/bin/php && ln -s /usr/bin/php81 /usr/bin/php
+# Use PHP82
+RUN rm /usr/bin/php && ln -s /usr/bin/php82 /usr/bin/php
 
 # Install composer
 RUN curl --silent --show-error https://getcomposer.org/installer | php -- --2.2 && \
