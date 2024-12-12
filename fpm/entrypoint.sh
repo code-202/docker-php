@@ -11,7 +11,7 @@ if [ "$USERNAME" -a ! "$(id "$USERNAME")" ]; then
     adduser -u "$UNIX_UID" -h /home/developer "$USERNAME" -D
 
     # Replace www-data by $USERNAME
-    sed --in-place --expression="s/www-data/$USERNAME/g" /etc/php81/php-fpm.d/www.conf
+    sed --in-place --expression="s/www-data/$USERNAME/g" /etc/php84/php-fpm.d/www.conf
 
 fi
 

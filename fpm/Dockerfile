@@ -1,14 +1,14 @@
-FROM code202/php:8.2
+FROM code202/php:8.4
 
-MAINTAINER jn.germon@code202.fr
+LABEL org.opencontainers.image.authors="jn.germon@code202.fr"
 
 RUN apk update && \
     apk add \
-        php82-fpm \
+        php84-fpm \
     && rm -rf /var/cache/apk/*
 
-ADD php-fpm.conf /etc/php82/php-fpm.d/www.conf
-ADD docker.conf /etc/php82/php-fpm.d/docker.conf
+ADD php-fpm.conf /etc/php84/php-fpm.d/www.conf
+ADD docker.conf /etc/php84/php-fpm.d/docker.conf
 
 COPY entrypoint.sh /
 
@@ -18,4 +18,4 @@ EXPOSE 9000
 
 ENTRYPOINT ["/entrypoint.sh"]
 
-CMD ["php-fpm81"]
+CMD ["php-fpm84"]
