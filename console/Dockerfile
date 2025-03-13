@@ -1,26 +1,17 @@
-FROM code202/php:8.4
+FROM code202/php:8.4.1
 
 LABEL org.opencontainers.image.authors="jn.germon@code202.fr"
 
-RUN apk update && \
-    apk add \
-        composer \
-        curl \
-        git \
-        make \
-        openssh \
-        zsh \
-    && rm -rf /var/cache/apk/*
+RUN apk add --no-cache\
+    # composer=2.8.5-r0 \
+    curl=8.12.1-r0 \
+    git=2.47.2-r0 \
+    make=4.4.1-r2 \
+    openssh=9.9_p2-r0 \
+    zsh=5.9-r4 
 
 # Use PHP84
 RUN rm /usr/bin/php && ln -s /usr/bin/php84 /usr/bin/php
-
-# Install composer
-RUN /usr/bin/php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
-    /usr/bin/php -r "if (hash_file('sha384', 'composer-setup.php') === 'dac665fdc30fdd8ec78b38b9800061b4150413ff2e3b6f88543c636f7cd84f6db9189d43a81e5503cda447da73c7e5b6') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;" && \
-    /usr/bin/php composer-setup.php --2.2 && \
-    /usr/bin/php -r "unlink('composer-setup.php');" && \
-    mv composer.phar /usr/local/bin/composer
 
 ENV CONTAINER_SHELL=/bin/bash
 

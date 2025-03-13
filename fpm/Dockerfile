@@ -1,14 +1,12 @@
-FROM code202/php:8.4
+FROM code202/php:8.4.1
 
 LABEL org.opencontainers.image.authors="jn.germon@code202.fr"
 
-RUN apk update && \
-    apk add \
-        php84-fpm \
-    && rm -rf /var/cache/apk/*
+RUN apk add --no-cache\
+    php84-fpm 
 
-ADD php-fpm.conf /etc/php84/php-fpm.d/www.conf
-ADD docker.conf /etc/php84/php-fpm.d/docker.conf
+COPY php-fpm.conf /etc/php84/php-fpm.d/www.conf
+COPY docker.conf /etc/php84/php-fpm.d/docker.conf
 
 COPY entrypoint.sh /
 
