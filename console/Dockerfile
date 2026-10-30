@@ -1,17 +1,17 @@
-FROM code202/php:8.4.1
+FROM code202/php:8.3.36
 
 LABEL org.opencontainers.image.authors="jn.germon@code202.fr"
 
 RUN apk add --no-cache\
-    composer=2.8.5-r0 \
-    curl=8.12.1-r0 \
-    git=2.47.2-r0 \
+    composer=2.8.9-r0 \
+    curl=8.14.1-r3 \
+    git=2.47.3-r0 \
     make=4.4.1-r2 \
     openssh=9.9_p2-r0 \
     zsh=5.9-r4 
 
 # Use PHP84
-RUN rm /usr/bin/php && ln -s /usr/bin/php84 /usr/bin/php && mv /usr/bin/composer.phar /usr/local/bin/composer
+RUN rm /usr/bin/php && ln -s /usr/bin/php83 /usr/bin/php && mv /usr/bin/composer.phar /usr/local/bin/composer
 
 ENV CONTAINER_SHELL=/bin/bash
 

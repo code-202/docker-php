@@ -1,4 +1,4 @@
-VERSION=8.4.1
+VERSION=8.3.36
 
 build:
 	docker build -t code202/php:$(VERSION) php

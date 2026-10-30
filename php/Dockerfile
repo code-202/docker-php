@@ -4,35 +4,32 @@ LABEL org.opencontainers.image.authors="jn.germon@code202.fr"
 
 RUN apk add --no-cache\
     bash \
-    php84 \
-    php84-bcmath \
-    php84-dom \
-    php84-ctype \
-    php84-curl \
-    php84-fileinfo \
-    php84-gd \
-    php84-iconv \
-    php84-intl \
-    php84-json \
-    php84-mbstring \
-    php84-opcache \
-    php84-openssl \
-    php84-pdo \
-    php84-pdo_pgsql \
-    php84-phar \
-    php84-posix \
-    php84-simplexml \
-    php84-session \
-    php84-soap \
-    php84-sodium \
-    php84-tokenizer \
-    php84-xml \
-    php84-xmlreader \
-    php84-xmlwriter \
-    php84-zip 
-
-# Use PHP84
-RUN ln -s /usr/bin/php84 /usr/bin/php
+    php83 \
+    php83-bcmath \
+    php83-dom \
+    php83-ctype \
+    php83-curl \
+    php83-fileinfo \
+    php83-gd \
+    php83-iconv \
+    php83-intl \
+    php83-json \
+    php83-mbstring \
+    php83-opcache \
+    php83-openssl \
+    php83-pdo \
+    php83-pdo_pgsql \
+    php83-phar \
+    php83-posix \
+    php83-simplexml \
+    php83-session \
+    php83-soap \
+    php83-sodium \
+    php83-tokenizer \
+    php83-xml \
+    php83-xmlreader \
+    php83-xmlwriter \
+    php83-zip 
 
 CMD ["tail", "-f", "/srv/README.md"]
 
